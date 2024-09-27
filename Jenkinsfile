@@ -18,7 +18,7 @@ pipeline {
             description: 'Type of scan that is going to perform inside the container',
             name: 'SCAN_TYPE'
 
-        string defaultValue: 'http://52.79.92.130:8080/petclinic/',
+        string defaultValue: 'http://3.35.47.25:8080/petclinic/',
             description: 'Target URL to scan',
             name: 'TARGET'
 
