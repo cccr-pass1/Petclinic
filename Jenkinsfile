@@ -8,7 +8,7 @@ pipeline {
     
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
-        TOMCAT_HOST = 'http://52.79.92.130'  // Tomcat 서버 호스트
+        TOMCAT_HOST = 'http://3.35.47.25'  // Tomcat 서버 호스트
         TOMCAT_PORT = '8080'  // Tomcat 관리 포트
         TOMCAT_USER = credentials('deployer_user')  // Jenkins에 설정된 Tomcat 인증 정보
     }
