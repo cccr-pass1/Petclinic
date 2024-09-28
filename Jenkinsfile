@@ -203,5 +203,27 @@ pipeline {
             sh 'docker stop owasp && docker rm owasp'
             cleanWs()
         }
+
+        success {
+            script {
+                // Slack 성공 메시지 전송
+                slackSend(
+                    channel: '#devsecops_reports', 
+                    color: '#36a64f', // 성공시 초록색
+                    message: "OWASP ZAP 및 Trivy 스캔이 성공적으로 완료되었습니다.\n보고서는 이메일로 전송되었습니다."
+                )
+            }
+        }
+        
+        failure {
+            script {
+                // Slack 실패 메시지 전송
+                slackSend(
+                    channel: '#devsecops_reports', 
+                    color: '#FF0000', // 실패시 빨간색
+                    message: "OWASP ZAP 또는 Trivy 스캔이 실패했습니다. 로그를 확인하세요."
+                )
+            }
+        }
     }
 }
