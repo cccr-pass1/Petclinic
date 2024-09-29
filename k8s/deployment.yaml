@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: gongdae1359/cccr_project1_frontend:latest
+        image: nuitciel/petclinic:latest
         ports:
         - containerPort: 80
